@@ -5,8 +5,6 @@ After = syslog.target network.target
 [Service]
 ExecStart = {{ amq_broker_dir }}/{{ amq_broker_name }}/bin/artemis run
 
-Type = forking
-
 User  = {{ amq_user }}
 Group = {{ amq_group }}
 
