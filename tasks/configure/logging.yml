@@ -1,0 +1,9 @@
+- name: set log configuration for broker install
+  template:
+    src: logging.properties.j2
+    dest: "{{ amq_broker_dir }}/{{ amq_broker_name }}/etc/logging.properties"
+    owner: "{{ amq_user }}"
+    group: "{{ amq_group }}"
+    mode: 0644
+  become: True
+  become_user: "{{ amq_user }}"
