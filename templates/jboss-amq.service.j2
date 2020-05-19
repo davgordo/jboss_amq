@@ -3,8 +3,7 @@ Description = Red Hat AMQ - {{ amq_broker_name }}
 After = syslog.target network.target
 
 [Service]
-ExecStart = {{ amq_broker_dir }}/{{ amq_broker_name }}/bin/artemis-service start
-ExecStop  = {{ amq_broker_dir}}/{{amq_broker_name}}/bin/artemis-service stop
+ExecStart = {{ amq_broker_dir }}/{{ amq_broker_name }}/bin/artemis run
 
 Type = forking
 
