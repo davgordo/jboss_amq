@@ -12,7 +12,7 @@ amq_broker_dir: "{{ amq_root_dir }}/brokers"
 amq_user: jboss
 amq_group: jboss
 amq_broker_name: broker
-amq_broker_data_dir: "{{ amq_root_dir }}/data"
+amq_broker_data_dir: "data"
 
 # Primary admin user and role with which the broker is created
 amq_broker_admin:
