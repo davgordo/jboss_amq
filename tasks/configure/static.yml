@@ -15,7 +15,7 @@
 
 - name: configure - static broker.xml
   template:
-    src: "{{ playbook_dir }}/brokers/dc1-broker.xml"
+    src: "{{ playbook_dir }}/brokers/{{ broker_config }}"
     dest: "{{ amq_broker_dir }}/{{ amq_broker_name }}/etc/broker.xml"
     owner: "{{ amq_user }}"
     group: "{{ amq_group }}"
