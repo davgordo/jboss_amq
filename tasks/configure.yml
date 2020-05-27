@@ -1,19 +1,27 @@
 ---
 - include_tasks: configure/create-broker.yml
+  when: config_mode == 'generated'
 
 - include_tasks: configure/tls.yml
-  when: amq_broker_tls
+  when: config_mode == 'generated' and amq_broker_tls
 
 - include_tasks: configure/shared_storage.yml
-  when: amq_broker_shared_storage
+  when: config_mode == 'generated' and amq_broker_shared_storage
 
 - include_tasks: configure/clustering.yml
-  when: amq_broker_clustered
+  when: config_mode == 'generated' and amq_broker_clustered
 
 - include_tasks: configure/ports.yml
+  when: config_mode == 'generated'
 
 - include_tasks: configure/users-roles.yml
+  when: config_mode == 'generated'
+
+- include_tasks: configure/static.yml
+  when: config_mode == 'static'
 
 - include_tasks: configure/logging.yml
+
+- include_tasks: configure/plugins.yml
 
 - include_tasks: configure/service.yml

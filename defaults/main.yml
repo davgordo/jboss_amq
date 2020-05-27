@@ -13,6 +13,12 @@ amq_user: jboss
 amq_group: jboss
 amq_broker_name: broker
 amq_broker_data_dir: "data"
+config_mode: generated
+
+################## Generated Config Mode #####################
+# All configuration options below pertain to the 'generated' #
+# configuration mode, which is enabled bny default.          #
+##############################################################
 
 # Primary admin user and role with which the broker is created
 amq_broker_admin:

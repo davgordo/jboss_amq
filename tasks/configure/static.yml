@@ -1,0 +1,22 @@
+---
+
+- name: configure - static - create broker
+  shell: >
+    {{ amq_install_dir }}/bin/artemis create {{ amq_broker_dir }}/{{ amq_broker_name }}
+    --name {{ amq_broker_name }}
+  args:
+    creates: "{{ amq_broker_dir }}/{{ amq_broker_name }}"
+  register: broker_created
+  become: True
+  become_user: "{{ amq_user }}"
+
+- name: configure - static broker.xml
+  template:
+    src: "{{ playbook_dir }}/brokers/dc1-broker.xml"
+    dest: "{{ amq_broker_dir }}/{{ amq_broker_name }}/etc/broker.xml"
+    owner: "{{ amq_user }}"
+    group: "{{ amq_group }}"
+    mode: 0644
+  notify: enable and start broker service
+  become_user: root
+  become: yes

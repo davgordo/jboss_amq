@@ -1,4 +1,5 @@
 ---
+  
 - name: configure - service - install service for broker
   template:
     src: jboss-amq.service.j2
