@@ -4,7 +4,7 @@
 - name: copy broker plugins from local directory
   copy:
     src: "{{ playbook_dir }}/broker-plugins/"
-    dest: "{{ amq_broker_dir }}/{{ amq_broker_name }}/plugins/"
+    dest: "{{ amq_broker_dir }}/{{ amq_broker_name }}/lib/"
     owner: "{{ amq_user }}"
     group: "{{ amq_group }}"
     mode: 0644
