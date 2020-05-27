@@ -4,6 +4,7 @@
   shell: >
     {{ amq_install_dir }}/bin/artemis create {{ amq_broker_dir }}/{{ amq_broker_name }}
     --name {{ amq_broker_name }}
+    --require-login
     --user {{ amq_broker_admin.name }}
     --password {{ amq_broker_admin.password }}
   args:
