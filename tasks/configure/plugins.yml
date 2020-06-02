@@ -8,5 +8,5 @@
     owner: "{{ amq_user }}"
     group: "{{ amq_group }}"
     mode: 0644
-  become: True
+  become: yes
   become_user: "{{ amq_user }}"

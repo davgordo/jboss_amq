@@ -11,7 +11,7 @@
   args:
     creates: "{{ amq_broker_dir }}/{{ amq_broker_name }}"
   register: broker_created
-  become: True
+  become: yes
   become_user: "{{ amq_user }}"
 
 - name: configure - static broker.xml
@@ -21,6 +21,6 @@
     owner: "{{ amq_user }}"
     group: "{{ amq_group }}"
     mode: 0644
-  notify: enable and start broker service
-  become_user: root
   become: yes
+  become_user: "{{ amq_user }}"
+  notify: enable and start broker service
