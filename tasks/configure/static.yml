@@ -7,6 +7,7 @@
     --require-login
     --user {{ amq_broker_admin.name }}
     --password {{ amq_broker_admin.password }}
+    --http-host {{ ansible_host }}
   args:
     creates: "{{ amq_broker_dir }}/{{ amq_broker_name }}"
   register: broker_created
