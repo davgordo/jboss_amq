@@ -14,6 +14,7 @@ amq_group: jboss
 amq_broker_name: broker
 amq_broker_data_dir: "data"
 config_mode: generated
+static_template_params: []
 
 # Primary admin user and role with which the broker is created
 amq_broker_admin:
