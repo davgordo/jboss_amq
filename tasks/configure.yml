@@ -22,6 +22,8 @@
 
 - include_tasks: configure/logging.yml
 
+- include_tasks: configure/profile.yml
+
 - include_tasks: configure/plugins.yml
 
 - include_tasks: configure/service.yml

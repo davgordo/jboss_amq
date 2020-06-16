@@ -21,6 +21,8 @@ amq_broker_admin:
   name: amq
   password: redhat
   role: admins
+  
+java_opts: " -XX:+PrintClassHistogram -XX:+UseG1GC -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -Xms512M -Xmx4G -Dhawtio.realm=activemq  -Dhawtio.offline=\"true\" -Dhawtio.role=admins -Dhawtio.rolePrincipalClasses=org.apache.activemq.artemis.spi.core.security.jaas.RolePrincipal -Djolokia.policyLocation=${ARTEMIS_INSTANCE_ETC_URI}jolokia-access.xml -Djon.id=amq"
 
 ################## Generated Config Mode #####################
 # All configuration options below pertain to the 'generated' #

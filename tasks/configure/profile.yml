@@ -1,0 +1,7 @@
+---
+
+- name: set java params
+  lineinfile:
+    path: "{{ amq_broker_dir }}/{{ amq_broker_name }}/etc/artemis.profile"
+    regexp: "^JAVA_ARGS="
+    line: "JAVA_ARGS=\"{{ java_opts }}\""
