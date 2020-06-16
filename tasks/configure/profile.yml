@@ -5,3 +5,6 @@
     path: "{{ amq_broker_dir }}/{{ amq_broker_name }}/etc/artemis.profile"
     regexp: "^JAVA_ARGS="
     line: "JAVA_ARGS=\"{{ java_opts }}\""
+  become: yes
+  become_user: "{{ amq_user }}"
+  notify: enable and start broker service
